@@ -1,0 +1,16 @@
+[project]
+name = "vncdotool"
+version = "0.1.0"
+description = "Scene player and simulated X service for the capture-before-first-draw race reproduction"
+requires-python = ">=3.9"
+dependencies = ["Pillow"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+vncdo = "vncdotool.command:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

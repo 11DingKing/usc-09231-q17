@@ -10,11 +10,11 @@ from vncdotool import pixelformat
 
 
 def quantize(image: Image.Image, pixel_format: pixelformat.PixelFormat) -> Image.Image:
-    """ . "说明"The screen a client rebuilds after a server packed it into this format.
+    """The screen a client rebuilds after a server packed it into this format.
 
     The server keeps a channel's top bits and Pillow's unpacker replicates
     them back up to eight, so a value's low bits come from its own high ones.
-    """ . "说明"
+    """
     def channel(value: int, maximum: int) -> int:
         bits = maximum.bit_length()
         kept = value >> (8 - bits)
@@ -89,7 +89,7 @@ class TestClickTargets(unittest.TestCase):
         self.assertEqual(len(set(targets)), len(targets))
 
     def test_the_catalogues_agree(self) -> None:
-        """ . "说明"The two catalogues list the same scenes, so no cell selects nothing.""" . "说明"
+        """The two catalogues list the same scenes, so no cell selects nothing."""
         self.assertEqual(click_targets.KEYS, tuple(sorted(scenes.SCENES)))
 
     def test_the_grid_matches_the_scene_geometry(self) -> None:
@@ -111,13 +111,13 @@ class ClickTargetRoundTrip:
 
 
 class JpegRoundTrip:
-    """ . "说明"The glyph read back off a scene a lossy encoder has been through.
+    """The glyph read back off a scene a lossy encoder has been through.
 
     Tight offers JPEG once a quality level is advertised, so a captured frame
     need not be the frame the scene player drew. Ink and paper differ only in
     luma, which JPEG keeps far better than chroma, and a cell is sampled at
     its centre rather than at the edges the ringing gathers on.
-    """ . "说明"
+    """
 
     key: str
     quality: int

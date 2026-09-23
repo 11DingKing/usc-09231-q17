@@ -1,4 +1,4 @@
-""" . "说明"The in-container scene player, exercised through a real server.""" . "说明"
+"""The in-container scene player, exercised through a real server."""
 from __future__ import annotations
 
 import tempfile
